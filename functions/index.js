@@ -54,10 +54,6 @@ exports.webhook = functions.https.onRequest((request, response) => {
                 console.log('data _ teachers -->', teachers);
                 console.log('speech_ teachersValues -->', teacherDocsValues);
 
-                var temp = {
-                    'name': 'adel',
-                    'age': 21
-                }
                 //response.send({ "data": temp, "speech":teacherDocsValues });
                 //response.setHeader('Content-Type', 'application/json');
                 response.send({
