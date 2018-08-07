@@ -1,0 +1,58 @@
+{
+  "id": "8ddb1e02-6de8-4ac3-a767-2242cb8db5fe",
+  "timestamp": "2018-08-07T12:08:11.455Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "math",
+    "action": "needTutor",
+    "actionIncomplete": false,
+    "parameters": {
+      "tutorSubject": "Math"
+    },
+    "contexts": [],
+    "metadata": {
+      "isFallbackIntent": "false",
+      "webhookResponseTime": 2994,
+      "intentName": "tutor",
+      "intentId": "4a267436-1f11-48d2-81d4-a89e350e22a7",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false"
+    },
+    "fulfillment": {
+      "speech": "Ahmed#math#200#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#Gan#math#500#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#Sam#math#900#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Ahmed#math#200#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#Gan#math#500#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#Sam#math#900#https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg#"
+        }
+      ],
+      "data": [
+        {
+          "image": "https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg",
+          "name": "Ahmed",
+          "salary": 200,
+          "subject": "math"
+        },
+        {
+          "image": "https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg",
+          "name": "Gan",
+          "salary": 500,
+          "subject": "math"
+        },
+        {
+          "image": "https://cdn.uploadvr.com/wp-content/uploads/2016/04/Bill-Gates-VR-Education-1024x689.jpg",
+          "name": "Sam",
+          "salary": 900,
+          "subject": "math"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "9f3193ca-3811-5787-7a8e-a1e346bcbf37"
+}
