@@ -15,6 +15,7 @@ function checkPhone(data) {
 }*/
 exports.webhook = functions.https.onRequest((request, response) => {
 
+
     var action = request.body.result.action;
     if (action === 'needTutor') {
 
@@ -50,16 +51,26 @@ exports.webhook = functions.https.onRequest((request, response) => {
                         "contextOut": teachers,
                         //"source": "DigiFlow"
                     });*/
-                    console.log('data _ teachers -->', teachers);
-                    console.log('speech_ teachersValues -->', teacherDocsValues);
-                    
-                    
-                response.send({ "data": teachers, "speech":teacherDocsValues });
+                console.log('data _ teachers -->', teachers);
+                console.log('speech_ teachersValues -->', teacherDocsValues);
+
+                var temp = {
+                    'name': 'adel',
+                    'age': 21
+                }
+                //response.send({ "data": temp, "speech":teacherDocsValues });
+                //response.setHeader('Content-Type', 'application/json');
+                response.send({
+                    "speech": JSON.stringify({
+                        "data": teachers,
+                        "text": teacherDocsValues
+                    })
+                });
 
             })
     }
 
-    else {
+    /*else {
         response.send({ speech: `undefined action` });
-    }
+    }*/
 });
