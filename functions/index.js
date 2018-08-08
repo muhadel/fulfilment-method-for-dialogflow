@@ -28,12 +28,6 @@ exports.webhook = functions.https.onRequest((request, response) => {
 
                 snapshot.forEach((data) => {
                     teachers.push(data.val());
-
-                    //Debug cases
-                    //console.log('data.key', data.key)
-                    //console.log('paramSubject', paramSubject);
-                    //console.log('teachers array', teachers);
-
                 });
 
                 teachers.forEach(teacherDoc => {
@@ -43,19 +37,9 @@ exports.webhook = functions.https.onRequest((request, response) => {
 
                 //response.send({ speech: teacherDocsValues });
 
-                /*response.send(
-                    {
-                        "speech": "Hmm hai ",
-                        "displayText": " I will catch you",
-                        "data": { "name": "Abhay" },
-                        "contextOut": teachers,
-                        //"source": "DigiFlow"
-                    });*/
                 console.log('data _ teachers -->', teachers);
                 console.log('speech_ teachersValues -->', teacherDocsValues);
 
-                //response.send({ "data": temp, "speech":teacherDocsValues });
-                //response.setHeader('Content-Type', 'application/json');
                 response.send({
                     "speech": JSON.stringify({
                         "data": teachers,
@@ -64,6 +48,27 @@ exports.webhook = functions.https.onRequest((request, response) => {
                 });
 
             })
+    }
+    else if (action === 'studentInfo') {
+
+        console.log('inside basic info action');
+        var params = request.body.result.parameters;
+        var hobbies = params.hobbies;
+        var schoolName = params.schoolName;
+        var highSchoolDegree = params.highSchoolDegree;
+
+        console.log('parameters', hobbies, schoolName, highSchoolDegree);
+        if (hobbies && schoolName && highSchoolDegree) {
+            admin.database().ref('/info').push({
+                'hobbies': hobbies,
+                'schoolName': schoolName,
+                'highSchoolDegree': highSchoolDegree
+            })
+                .on('value', (snapshot) => {
+                    console.log('Data pushed successfully!');
+                });
+        }
+
     }
 
     /*else {
